@@ -1,0 +1,637 @@
+/* ########################################### */
+/*                 Global                      */
+/* ########################################### */
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:rgb(0,0,0);
+    color:aliceblue;
+}
+
+a{
+    color:#FF0042;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellow;
+}
+
+h1{
+    font-size:16px;
+    font-weight: bolder;
+}
+
+
+/* ########################################### */
+/*           Forums.html                       */
+/* ########################################### */
+.container{
+    margin: 20px;
+    padding: 20px;
+}
+
+.subforum{
+    margin-top:20px;
+}
+
+.subforum-title{
+    background-color:#292B2E;
+    padding: 5px;
+    border-radius: 5px;
+    margin:4px;
+}
+
+.subforum-row{
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%;
+}
+
+.subforum-column{
+    padding: 10px;
+    margin:4px;
+    border-radius: 5px;
+    background-color:#111314;
+}
+
+.subforum-description *{
+    margin-block: 0;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i{
+    font-size: 45px;
+}
+
+.subforum-devider{
+    display: none;   
+}
+
+
+/* For the smartphones */
+@media screen and (max-width: 460px) {
+    .container{
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 65% 35%;
+    }
+
+    .subforum-devider{
+        display: block;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(190, 190, 190, 0), rgba(255, 255, 255, 0.75), rgba(190, 190, 190, 0));
+    }
+
+    
+
+  }
+
+/* For the tablets */
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+
+    .subforum-icon i{
+        font-size: 35px;
+    }
+
+    html{
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+
+  }
+/*   Header Section    */
+
+header{
+   display: flex;
+   flex-direction: column;
+}
+
+
+.navbar .login{
+    position: absolute;
+    right: 40px;
+}
+  /* Nav Bar styles */
+.navbar{
+    display:flex;
+    align-items: center;
+    background-color: red;
+    padding: 15px;
+}
+.navigation{
+    background-color:#f8f237;
+    padding: 10px;
+    width: 65%;
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right:10px;
+    color: #292B2E;
+}
+
+.close-icon i{
+    font-size:60px;
+    float: left;
+    cursor: pointer;
+    color: #292B2E;
+}
+
+.nav-list{
+    list-style-type:none;
+    overflow: hidden;
+}
+
+.nav-item a{
+    float: right;
+    display:block;
+    text-align: center;
+    margin-inline: 20px;
+    font-size: 20px;
+    padding: 10px;
+    color: #292B2E;
+
+}
+
+.nav-item a:hover{
+    background-color: rgb(0,0,0,0.1);
+}
+
+.hide{
+    display: none;
+}
+
+.bar-icon{
+    font-size: 60px;
+    display: inline-block;
+    margin-right:10px;
+    color: #292B2E;
+    cursor: pointer;
+}
+
+.bar-icon:hover{
+    color: #292B2E;
+}
+
+
+@font-face {
+    font-family:aquire;
+    src:url(aquire.otf);
+}
+
+.brand{
+    font-size:60px;
+    display: flex;
+    color: #292B2E;
+}
+
+/*Navbar for the smartphones*/
+@media screen and (max-width: 460px){
+    .navigation{
+        max-height: auto;
+    }
+    
+    .close-icon i{
+        font-size:30px;
+    }
+    
+    .nav-item a{
+        float:left;
+        display:inline;
+        margin-inline: 3px;
+        font-size: 10px;
+        padding: 5px;
+    }
+    
+    
+    .bar-icon{
+        font-size: 30px;
+    }
+ 
+    .brand{
+        font-size:20px;
+    }
+}
+
+  /* Search Box styles */
+.search-box{
+    background-color: #fdf616;
+    padding: 40px;
+    display:flex;
+    justify-content: center;
+    
+}
+.search-box .option{
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.search-box select{
+    padding: 10px;
+}
+
+.search-box input{
+    padding: 10px;
+    border-radius: 5px;
+    border:  1px solid black;
+
+}
+
+.search-box button{
+    padding: 10px;
+    background-color:#fff;
+    color:#000000;
+    border-radius: 5px;
+}
+
+.search-box button:hover{
+    background-color: #292B2E;
+    color: #fff;
+}
+
+/* search box for smrtphones */
+@media screen and (max-width: 460px){
+    .search-box input, .search-box button, .search-box select{
+        min-width: 300px;
+        margin-top: 5px;
+    }    
+
+}
+
+/* forum info Styling */
+.forum-info{
+    padding: 20px;
+    background-color: #111314;
+}
+
+.chart{
+    font-size:20px;
+    font-weight:bold;
+}
+/* Footer Styling */
+
+footer{
+    margin-top: 10px;
+    padding: 30px;
+    background-color: rgb(255, 27, 27);
+    display: block;
+    text-align: center;
+}
+
+/* ########################################### */
+/*            posts.html                       */
+/* ########################################### */
+
+/* posts table's head  */
+.table-head{
+    display: flex;
+}
+
+.table-head div{
+    padding: 5px;
+    margin: 2px;
+    background-color: #2C2C2C;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+
+.table-head .subjects{
+    flex: 65%;
+}
+
+.table-head .replies{
+    flex: 10%;
+}
+
+.table-head .last-reply{
+    flex: 15%;
+}
+
+.table-head .up-down{
+    flex: 5%;
+}
+
+/* posts table's body  */
+
+.table-row{
+    display: flex;
+
+}
+
+
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply , .table-row .up-down{
+    padding: 5px;
+    margin: 2px;
+    background-color: #131415;
+    border-radius: 2px;  
+}
+
+.table-row .status{
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects{
+    flex: 65%;
+}
+
+.table-row .replies{
+    flex: 10%;
+}
+
+.table-row .last-reply{
+    flex: 15%;
+}
+
+.table-row .up-down{
+    flex:5%;
+    justify-content: center;
+    
+}
+
+
+
+/* navigation path*/
+.navigate{
+    margin-block: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a{
+    color: #fff;
+}
+
+.navigate a:hover{
+    color:#FF0042;
+    font-weight: bolder;
+}
+
+/* Pagination*/
+
+.pagination{
+    padding: 20px;
+    font-size: 15px;
+}
+
+.pagination a{
+    color: #fff;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px #fff;
+}
+
+.pagination a:hover{
+    opacity: 0.5;
+}
+
+.note{
+    background-color:#111314;
+    padding: 20px;
+    display: block;
+}
+
+.note span{
+    font-size: 20px;
+    margin-block: 5px;
+}
+
+
+/* ########################################### */
+/*            detail.html                      */
+/* ########################################### */
+
+.head{
+    display: flex;
+    background-color: #2C2C2C;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.authors{
+    flex: 20%;
+}
+
+.content{
+    flex: 80%;
+}
+
+.body{
+    display: flex;
+    background-color: #131415;
+    padding: 12px;
+    margin-top: 5px;
+}
+
+.body .authors .username{
+    font-size: 20px;
+}
+
+.body .authors img{
+    max-width: 50px;
+    max-height: 80px;
+}
+
+.body .content .comment button{
+    border:none;
+    padding:10px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+
+/* comment section */
+.comment-area{
+    margin-bottom:50px;
+}
+
+.comment-area textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover{
+    border: solid 1px #000000;
+}
+
+.comment-area .submit button{
+    border:none;
+    padding:5px;
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.comment-area .submit button:hover{
+    border:none;
+    padding:5px;
+    background-color: rgb(255, 62, 62);
+    font-weight: bolder;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+
+
+/*upvote downvote*/
+
+.vote{
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    background: url('https://i.stack.imgur.com/iqN2k.png');
+    background-position: 0 -25px;
+  } 
+  
+  
+  .vote.on {
+    background-position: 0 2px;
+  }
+
+
+  .vote1{
+    display: inline-block;
+    overflow: hidden;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    background: url('https://i.stack.imgur.com/iqN2k.png');
+    background-position: 0 -25px;
+    transform: rotate(180deg);
+  } 
+  
+  
+  .vote1.on {
+    background-position: 0 2px;
+  }
+
+
+/*login button*/
+
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: aliceblue;
+  color:#2C2C2C ;
+  padding: 11px;
+  width: 120px;
+  border-radius: 7px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.open-button:hover{
+    background-color: #292B2E;
+    color: #fff;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color:  #2C2C2C;
+  border-radius: 7px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  border-radius: 5px;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: yellow;
+  color:black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
